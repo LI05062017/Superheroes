@@ -1,11 +1,17 @@
 import React from 'react'
-import {
-  Link
-} from 'react-router-dom'
-const Heroes = () => 
-  <div>
-    <h3> Heroes</h3>
-  </div>
 
-
+const Heroes = ({heroes}) => {
+  return (
+    <div>
+      <h1> Heroes </h1>
+      {
+        heroes.map((hero) => {
+          return (
+            <h3>{hero.name}</h3>
+          )
+        })
+      }
+      </div>
+  )
+}
 export default Heroes

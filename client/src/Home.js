@@ -2,9 +2,7 @@ import React from 'react'
 
 const styleHome = {
   container: {
-    display: 'flex',
-    alignItems: 'center',
-    jsutifyContent: 'center'
+    
   }
 }
 

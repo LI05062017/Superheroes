@@ -13,6 +13,7 @@ const styleNav = {
     justifyContent: 'space-around',
     border: '1px solid black',
     borderRadius: '2px',
+    fontSize: '17px'
 
 
   }
@@ -23,6 +24,7 @@ const NavBar = () =>
   <nav style={styleNav.container}>
     <Link to ='/'>Home</Link>
     <Link to ='/heroes'>Heroes</Link>
+    <Link to='/create-hero'> Create Hero</Link>
   </nav>
 
 export default NavBar
