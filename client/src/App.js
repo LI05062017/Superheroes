@@ -7,6 +7,7 @@ import Heroes from './Heroes'
 import Villains from './Villains'
 import Home from './Home'
 import NavBar from './NavBar'
+import './style.css'
 import CreateHeroContainer from './CreateHeroContainer'
 import CreateVillainContainer from './CreateVillainContainer'
 import $ from 'jquery'
@@ -44,6 +45,7 @@ loadVillainsFromServer = () => {
 
 render() {
   return (
+    <div className='body'>
 <Router>
   <div>
     <NavBar />
@@ -63,6 +65,7 @@ render() {
    }
   </div>
 </Router>
+ </div>
   )
  }
 }

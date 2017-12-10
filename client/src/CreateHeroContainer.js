@@ -41,10 +41,11 @@ class CreateHeroContainer extends Component {
 
   render() {
     return (
-      <div>
-        <h3> Create Hero </h3>
+      <div className='HeroesBody'>
+        <h3 className='createHero'> Create Hero </h3>
+        <div className='heroForm'>
         <HeroForm />
-       
+        </div>
       </div>
     )
   }

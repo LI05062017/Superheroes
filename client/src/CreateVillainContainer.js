@@ -37,9 +37,11 @@ class CreateVillainContainer extends Component {
 
   render() {
     return(
-      <div> 
-        <h3> Create Villain </h3>
+      <div className='VillainBody'> 
+        <h3 className='createVillain'> Create Villain </h3>
+        <div className='villainForm'>
         <VillainForm />
+        </div>
       </div>
     )
   }

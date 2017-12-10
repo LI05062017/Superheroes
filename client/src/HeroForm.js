@@ -1,16 +1,32 @@
 import React from 'react'
 
+const HeroFormStyle = {
+  container: {
+  },
+  label: {
+  },
+  input: {
+
+  }, 
+  button: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    borderRadius: '2px'
+}
+}
+
 const HeroForm = () => {
  return (
    <div>
       <form>
-          <div>
-          <label> Name </label>
-          <input type='text' onChange={this.onNameChange} />
+          <div style={HeroFormStyle.container}>
+          <label style={HeroFormStyle.label}> Name </label>
+          <input stype={HeroFormStyle.input}type='text' onChange={this.onNameChange} />
           </div>
 
           <div>
-          <label> SuperPower </label>
+          <label style={HeroFormStyle.label}> SuperPower </label>
           <input type='text'onChange={this.onSuperPowerChange}/>
           </div>
           
@@ -28,7 +44,7 @@ const HeroForm = () => {
             <label> Nemesis </label>
             <input type='text' onChange={this.onNemesisChange}/>
           </div>
-          <button onClick={this.handleSumbit}> Submit Hero </button>
+          <button style={HeroFormStyle.button} onClick={this.handleSumbit}> Submit Hero </button>
           </form>
     </div>
 
