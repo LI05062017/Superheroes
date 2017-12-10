@@ -8,4 +8,4 @@ const Villain = new Schema({
     universe: String
 })
 
-module.exports=mongoose.model('Villain', Villain)
+module.exports = mongoose.model('Villain', Villain)

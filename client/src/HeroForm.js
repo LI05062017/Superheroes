@@ -28,7 +28,7 @@ const HeroForm = () => {
             <label> Nemesis </label>
             <input type='text' onChange={this.onNemesisChange}/>
           </div>
-          <button onClick={this.handleSumbit}> Submit </button>
+          <button onClick={this.handleSumbit}> Submit Hero </button>
           </form>
     </div>
 

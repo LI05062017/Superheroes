@@ -63,7 +63,7 @@ app.delete('/api/heroes/:heroId', (req, res) => {
 
 const mySecondPost = {name:'Bob', img:'Url.Bob', nemesis:'Fred',universe:'Pluto'}
 
-app.post('/api/villain', (req, res) => {
+app.post('/api/villains', (req, res) => {
   const {name, img, nemesis, universe} = req.body
   const newVillain = {name, img, nemesis, universe}
 
@@ -76,7 +76,7 @@ app.post('/api/villain', (req, res) => {
   })
 })
 
-app.get('/api/villain', (req, res) => {
+app.get('/api/villains', (req, res) => {
   Villain.find((err, villains) => {
     if (err) {
       res.json({ error: err })
@@ -86,7 +86,7 @@ app.get('/api/villain', (req, res) => {
   })
 })
 
-app.delete('/api/villain/:villainId', (req, res) => {
+app.delete('/api/villains/:villainId', (req, res) => {
  const deleteId = req.params.villainId
  Villain.remove({_id: deleteId}, (err, villain) => {
    if (err) {

@@ -4,15 +4,18 @@ import {
   Route,
 } from 'react-router-dom'
 import Heroes from './Heroes'
+import Villains from './Villains'
 import Home from './Home'
 import NavBar from './NavBar'
 import CreateHeroContainer from './CreateHeroContainer'
+import CreateVillainContainer from './CreateVillainContainer'
 import $ from 'jquery'
 
 
 class App extends Component {
   state = {
-    heroes: undefined
+    heroes: undefined,
+    villains: undefined
   }
 
 componentDidMount () {
@@ -25,6 +28,15 @@ loadHeroesFromServer = () => {
     method: 'GET'
   }).done((response) => {
     this.setState({heroes: response.heroes})
+  })
+}
+
+loadVillainsFromServer = () => {
+  $.ajax({
+    url: '/api/villains',
+    method: 'GET'
+  }).done((response) => {
+    this.setState({villians: response.villains})
   })
 }
 
@@ -42,6 +54,13 @@ render() {
       ? <Route path='/heroes' render={() => <Heroes heroes={this.state.heroes} />} />
       : 'Error!'
     }
+    
+   <Route path='/create-villain' render={() => <CreateVillainContainer loadVillainsFromServer={this.loadVillainsFromServer}/>} />
+   { 
+     this.state.villains
+     ? <Route path='/villains' render={() => <Villains villains={this.state.villains} />} />
+     : 'Error!'
+   }
   </div>
 </Router>
   )
