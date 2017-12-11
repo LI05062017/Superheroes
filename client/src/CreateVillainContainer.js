@@ -40,7 +40,13 @@ class CreateVillainContainer extends Component {
       <div className='VillainBody'> 
         <h3 className='createVillain'> Create Villain </h3>
         <div className='villainForm'>
-        <VillainForm />
+        <VillainForm 
+            onNameChange={this.onNameChange}
+            onImageChange={this.onImageChange}
+            onNemesisChange={this.onNemesisChange}
+            onUniverseChange={this.onUniverseChange}
+            handleSubmit={this.handleSubmit}
+        />
         </div>
       </div>
     )

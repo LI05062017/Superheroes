@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VillainForm = () => {
+const VillainForm = ({onNameChange, onImageChange, onNemesisChange, onUniverseChange}) => {
   return(
   <div>
     <form>

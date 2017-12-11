@@ -1,32 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const HeroFormStyle = {
-  container: {
-  },
-  label: {
-  },
-  input: {
-
-  }, 
-  button: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    borderRadius: '2px'
-}
-}
-
-const HeroForm = () => {
+const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisChange, onUniverseChange, handleSumbit}) => {
  return (
    <div>
       <form>
-          <div style={HeroFormStyle.container}>
-          <label style={HeroFormStyle.label}> Name </label>
-          <input stype={HeroFormStyle.input}type='text' onChange={this.onNameChange} />
+          <div >
+          <label > Name </label>
+          <input type='text' onChange={this.onNameChange} />
           </div>
 
           <div>
-          <label style={HeroFormStyle.label}> SuperPower </label>
+          <label> SuperPower </label>
           <input type='text'onChange={this.onSuperPowerChange}/>
           </div>
           
@@ -44,11 +29,20 @@ const HeroForm = () => {
             <label> Nemesis </label>
             <input type='text' onChange={this.onNemesisChange}/>
           </div>
-          <button style={HeroFormStyle.button} onClick={this.handleSumbit}> Submit Hero </button>
+          <button onClick={this.handleSumbit}> Submit Hero </button>
           </form>
     </div>
 
  )
 }
+
+// HeroForm.propTypes = {
+//   onNameChange: PropTypes.object.isRequired,
+//   onSuperPowerChange:PropTypes.string.isRequired,
+//   onImageChange:PropTypes.string.isRequired,
+//   onNemesisChange:PropTypes.string.isRequired,
+//   onUniverseChange:PropTypes.string.isRequired,
+//   handleSumbit:PropTypes.string.isRequired,
+// }
 
 export default HeroForm

@@ -44,7 +44,13 @@ class CreateHeroContainer extends Component {
       <div className='HeroesBody'>
         <h3 className='createHero'> Create Hero </h3>
         <div className='heroForm'>
-        <HeroForm />
+        <HeroForm 
+            onNameChange={this.onNameChange}
+            onSuperPowerChange={this.onSuperPowerChange}
+            onImageChange={this.onImageChange}
+            onUniverseChange={this.onUniverseChange}
+            handleSumbit={this.handleSumbit}
+        />
         </div>
       </div>
     )
