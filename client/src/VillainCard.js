@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HeroStyle={
+const VillainStyle={
   container: {
     border: '1px solid white',
   },
@@ -11,11 +11,12 @@ const HeroStyle={
   }
 }
 
-const HeroCard = ({hero}) => {
+const VillainCard = ({villain}) => {
   return (
     <div>
-    <h3 style={HeroStyle.h3}>{hero.name}</h3>
+      <h3 style={VillainStyle.h3}>{villain.name}</h3>
     </div>
   )
 }
-export default HeroCard
+
+export default VillainCard

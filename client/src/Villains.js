@@ -1,8 +1,9 @@
 import React from 'react'
+import VillainCard from './VillainCard'
 
 const VillainStyle={
   container: {
-    color: 'white',
+    color: 'black',
     textAlign:'center',
     fontFamily:'Kanit',
     border: '1px solid white',
@@ -34,7 +35,7 @@ const Villains = ({villains}) => {
       {
         villains.map((villain) => {
           return (
-            <h3 style={VillainStyle.h3}>{villain.name}</h3>
+            <VillainCard villain={villain} />
            
           )
         })

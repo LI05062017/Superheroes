@@ -7,27 +7,27 @@ const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisCha
       <form>
           <div >
           <label > Name </label>
-          <input type='text' onChange={this.onNameChange} />
+          <input type='text' onChange={onNameChange} />
           </div>
 
           <div>
           <label> SuperPower </label>
-          <input type='text'onChange={this.onSuperPowerChange}/>
+          <input type='text'onChange={onSuperPowerChange}/>
           </div>
           
           <div>
             <label> Image </label>
-            <input type='text' onChange={this.onImageChange}/>
+            <input type='text' onChange={onImageChange}/>
           </div>
 
           <div>
             <label> Universe </label>
-            <input type='text'onChange={this.onUniverseChange} />
+            <input type='text'onChange={onUniverseChange} />
           </div>
 
           <div>
             <label> Nemesis </label>
-            <input type='text' onChange={this.onNemesisChange}/>
+            <input type='text' onChange={onNemesisChange}/>
           </div>
           <button onClick={this.handleSumbit}> Submit Hero </button>
           </form>
@@ -36,13 +36,5 @@ const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisCha
  )
 }
 
-// HeroForm.propTypes = {
-//   onNameChange: PropTypes.object.isRequired,
-//   onSuperPowerChange:PropTypes.string.isRequired,
-//   onImageChange:PropTypes.string.isRequired,
-//   onNemesisChange:PropTypes.string.isRequired,
-//   onUniverseChange:PropTypes.string.isRequired,
-//   handleSumbit:PropTypes.string.isRequired,
-// }
 
 export default HeroForm
