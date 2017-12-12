@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(require('./config/error-handler'))
 
-const myFirstPost = {name: 'Fred', superpower: 'invisible', img: 'Fred.com', universe: 'mars', nemesis: 'Bob'}
+const myFirstPost = {name: 'Fred', superPower: 'invisible', img: 'Fred.com', universe: 'mars', nemesis: 'Bob'}
 
 app.post('/api/heroes', (req, res) => {
   const {name, superPower, img, universe, nemesis} = req.body

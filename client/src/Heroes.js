@@ -6,7 +6,6 @@ const HeroStyles = {
 color: 'white',
 textAlign:'center',
 fontFamily:'Kanit',
-border: '1px solid white',
 padding: '30px',
 
 },
@@ -14,12 +13,13 @@ h1: {
   fontSize: '45px',
   fontFamily:'Orbitron',
   textAlign: 'center',
-  letterSpacing: '3px',
+  letterSpacing: '4px',
   backgroundcolor: 'white',
-  border: '3px solid white',
+  border: '4px dashed white',
+  textDecoration: 'underline green',
   borderRadius: '5px',
-  padding: '10px',
-  margin: '20px'
+  padding: '25px',
+  margin: '20px',
  }
 }
 const Heroes = ({heroes, deleteHero}) => {

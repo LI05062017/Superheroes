@@ -2,19 +2,29 @@ import React from 'react'
 
 const VillainStyle={
   container: {
-    border: '1px solid white',
-  },
-  h3: {
-    border: '1px dotted white',
+    color: 'white',
+    border: '4px outset orange',
     borderRadius: '5px',
     margin: '20px'
+  },
+  h3: {
+    textDecoration: 'underline orange',
+    letterSpacing: '2px',
+    fontSize: '25px',
+  },
+  p: { 
+    fontFamily: 'Rajdhani',
+    fontSize: '17px'
+  },
   }
-}
 
 const VillainCard = ({villain}) => {
   return (
-    <div>
-      <h3 style={VillainStyle.h3}>{villain.name}</h3>
+      <div style={VillainStyle.container}>
+    <h3 style={VillainStyle.h3}>{villain.name}</h3>
+    <img style={VillainStyle.p}src={villain.img}/>
+    <p style={VillainStyle.p}>Nemesis: {villain.nemesis}</p>
+    <p style={VillainStyle.p}>Universe: {villain.universe}</p>
     </div>
   )
 }
