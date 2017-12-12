@@ -21,6 +21,7 @@ class App extends Component {
 
 componentDidMount () {
   this.loadHeroesFromServer()
+  this.loadVillainsFromServer()
 }
 
 loadHeroesFromServer = () => {
@@ -32,6 +33,34 @@ loadHeroesFromServer = () => {
   })
 }
 
+submitHeroPost = (e) => {
+  e.preventDeafult()
+  const newHero = {
+    name: this.state.name,
+    superPower: this.state.superPower,
+    img: this.state.img,
+    universe: this.state.universe,
+    nememsis: this.state.nememsis
+  }
+  $.ajax({
+    url: '/api/heroes',
+    method: 'POST',
+    data: newHero
+  }).done((response) => {
+    console.log(response)
+  })
+}
+
+// deletePostFromHero = (hero) => {
+//   $.ajax({
+//     url:`/api/heroes/${post._id}`,
+//     method: 'DELETE',
+//   }).done((response) => {
+//     console.log(response)
+//     this.loadHeroesFromServer()
+//   })
+// }
+
 loadVillainsFromServer = () => {
   $.ajax({
     url: '/api/villains',
@@ -41,6 +70,32 @@ loadVillainsFromServer = () => {
   })
 }
 
+submitVillainPost = (e) => {
+  e.preventDeafult()
+  const newVillain = {
+    name: this.state.name,
+    img: this.state.img,
+    universe: this.state.universe,
+    nememsis: this.state.nememsis
+  }
+  $.ajax({
+    url: '/api/villains',
+    method: 'POST',
+    data: newVillain
+  }).done((response) => {
+    console.log(response)
+  })
+}
+
+// deletePostFromVillain = (villain) => {
+//   $.ajax({
+//     url:`/api/villains/${post._id}`,
+//     method: 'DELETE',
+//   }).done((response) => {
+//     console.log(response)
+//     this.loadVillainsFromServer()
+//   })
+// }
 
 
 render() {

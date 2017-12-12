@@ -22,8 +22,7 @@ h1: {
   margin: '20px'
  }
 }
-
-const Heroes = ({heroes}) => {
+const Heroes = ({heroes, deleteHero}) => {
   return(
     <div style={HeroStyles.container}>
       <h1 style={HeroStyles.h1}> Heroes </h1>
@@ -31,12 +30,12 @@ const Heroes = ({heroes}) => {
       {
         heroes.map((hero) => {
           return (
-            <HeroCard hero={hero} />
-           
+            <HeroCard 
+            hero={hero} 
+            deleteHero={ () => deleteHero(hero) }/>
           )
         })
       }
-
     </div>
   )
 }

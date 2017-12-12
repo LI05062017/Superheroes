@@ -30,6 +30,7 @@ const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisCha
             <input type='text' onChange={onNemesisChange}/>
           </div>
           <button onClick={this.handleSumbit}> Submit Hero </button>
+          
           </form>
     </div>
 
