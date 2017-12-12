@@ -1,6 +1,5 @@
 .body {
   background-color: black;
-  background-size: cover;
 
 }
 
@@ -11,25 +10,29 @@
 }
 
 .createHero {
-  border: 1px solid white;
+  border: 4px dashed blue;
   color: white;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
   font-size: 40px;
   padding: 20px;
-  margin: 20px; 
+  padding-bottom: 20px;
+  margin: 10px; 
   border-radius: 5px;
 
 }
 
 .heroForm {
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 25px;
   padding: 20px;
+  margin: 25px;
+  margin-bottom:50px;
   border-radius: 5px
+
 }
 
 .VillainBody {
@@ -39,7 +42,7 @@
 }
 
 .createVillain {
-  border: 1px solid white;
+  border: 4px dashed yellow;
   color: white;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
@@ -51,11 +54,13 @@
 }
 
 .villainForm {
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 25px;
   padding: 20px;
+  margin: 25px;
+  margin-bottom:50px;
   border-radius: 5px
   }
   

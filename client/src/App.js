@@ -66,7 +66,7 @@ loadVillainsFromServer = () => {
     url: '/api/villains',
     method: 'GET'
   }).done((response) => {
-    this.setState({villians: response.villains})
+    this.setState({ villains: response.villains })
   })
 }
 

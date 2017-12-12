@@ -3,7 +3,7 @@ import VillainCard from './VillainCard'
 
 const VillainStyle={
   container: {
-    color: 'black',
+    color: 'white',
     textAlign:'center',
     fontFamily:'Kanit',
     border: '1px solid white',
