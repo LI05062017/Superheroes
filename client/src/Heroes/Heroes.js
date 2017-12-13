@@ -22,7 +22,7 @@ h1: {
   margin: '20px',
  }
 }
-const Heroes = ({heroes, deleteHero}) => {
+const Heroes = ({heroes, deleteHero, showUniqueHero}) => {
   return(
     <div style={HeroStyles.container}>
       <h1 style={HeroStyles.h1}> Heroes </h1>
@@ -32,7 +32,10 @@ const Heroes = ({heroes, deleteHero}) => {
           return (
             <HeroCard 
             hero={hero} 
-            deleteHero={ () => deleteHero(hero) }/>
+            deleteHero={deleteHero}
+            showUniqueHero={showUniqueHero}
+            />
+
           )
         })
       }

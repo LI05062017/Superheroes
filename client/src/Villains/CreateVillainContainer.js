@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import VillainForm from './VillainForm'
+import PropTypes from 'prop-types'
 import $ from 'jquery'
 import {
   withRouter
@@ -13,6 +14,12 @@ class CreateVillainContainer extends Component {
     universe: undefined
   }
 
+  static propTypes = {
+    loadVillainsFromServer: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
+  }
+
+
   onNameChange = (e) => this.setState({ name: e.target.value})
 
   onImageChange = (e) => this.setState({ img: e.target.value})
@@ -20,6 +27,7 @@ class CreateVillainContainer extends Component {
   onNemesisChange = (e) => this.setState({ nemesis: e.target.value})
 
   onUniverseChange = (e) => this.setState({ universe: e.target.value})
+
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -30,7 +38,7 @@ class CreateVillainContainer extends Component {
     method: 'POST',
     data: villain
   }).done((response) => {
-    this.props.loadVillainsFromServer
+    this.props.loadVillainsFromServer()
     this.props.history.push('/villains')
    })
   }

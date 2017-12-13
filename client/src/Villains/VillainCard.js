@@ -18,14 +18,17 @@ const VillainStyle={
   },
   }
 
-const VillainCard = ({villain}) => {
+const VillainCard = ({villain, deleteVillain, showUniqueVillain}) => {
   return (
-      <div style={VillainStyle.container}>
+  <div style={VillainStyle.container}>
     <h3 style={VillainStyle.h3}>{villain.name}</h3>
     <img style={VillainStyle.p}src={villain.img}/>
     <p style={VillainStyle.p}>Nemesis: {villain.nemesis}</p>
     <p style={VillainStyle.p}>Universe: {villain.universe}</p>
-    </div>
+
+    <button onClick={() => deleteVillain(villain)}>Delete Villain</button>
+    <button onClick={() => showUniqueVillain(villain)}> Show Unique Villain </button>
+  </div>
   )
 }
 

@@ -28,14 +28,18 @@ const VillainStyle={
   }
 }
 
-const Villains = ({villains}) => {
+const Villains = ({villains, deleteVillain, showUniqueVillain}) => {
   return(
     <div style={VillainStyle.container}>
       <h1 style={VillainStyle.h1}> Villains </h1>
       {
         villains.map((villain) => {
           return (
-            <VillainCard villain={villain} />
+            <VillainCard 
+            villain={villain} 
+            deleteVillain={deleteVillain}
+            showUniqueVillain={showUniqueVillain}
+            />
            
           )
         })

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import HeroForm from './HeroForm'
+import PropTypes from 'prop-types'
 import $ from 'jquery'
 import {
   withRouter
@@ -14,6 +15,11 @@ class CreateHeroContainer extends Component {
     nemesis: undefined
   }
 
+  static propTypes = {
+    loadHeroesFromServer: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
+  }
+
   onNameChange = (e) => this.setState({ name: e.target.value})
 
   onSuperPowerChange = (e) => this.setState({ superPower: e.target.value })
@@ -25,7 +31,7 @@ class CreateHeroContainer extends Component {
   onNemesisChange = (e) => this.setState({ nemesis: e.target.value })
 
 
-  handleSumbit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
     const {name, superPower, img, universe, nemesis} = this.state
     const hero = {name, superPower, img, universe, nemesis}
@@ -34,7 +40,7 @@ class CreateHeroContainer extends Component {
       method: 'POST',
       data: hero
     }).done((response) => {
-      this.props.loadHeroesFromServer
+      this.props.loadHeroesFromServer()
       this.props.history.push('/heroes')
     })
   }
@@ -49,7 +55,8 @@ class CreateHeroContainer extends Component {
             onSuperPowerChange={this.onSuperPowerChange}
             onImageChange={this.onImageChange}
             onUniverseChange={this.onUniverseChange}
-            handleSumbit={this.handleSumbit}
+            onNemesisChange={this.onNemesisChange}
+            handleSubmit={this.handleSubmit}
         />
         </div>
       </div>
