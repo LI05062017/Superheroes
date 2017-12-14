@@ -8,8 +8,10 @@ import Villains from './Villains/Villains'
 import Home from './SitePages/Home'
 import NavBar from './Components/NavBar'
 import './Components/style.css'
+import HeroContainer from './Heroes/HeroContainer'
 import CreateHeroContainer from './Heroes/CreateHeroContainer'
 import CreateVillainContainer from './Villains/CreateVillainContainer'
+import EditHeroContainer from './Heroes/EditHeroContainer'
 import $ from 'jquery'
 
 
@@ -131,13 +133,18 @@ render() {
       ? <Route path='/heroes' render={() => <Heroes showUniqueHero={this.showUniqueHero} deleteHero={this.deleteHero} heroes={this.state.heroes} />} />
       : 'Error!'
     }
-    
-   <Route path='/create-villain' render={() => <CreateVillainContainer loadVillainsFromServer={this.loadVillainsFromServer}/>} />
+
+    <Route path='/hero/:heroId' render={() => <HeroContainer />} />
+
+    <Route path='/create-villain' render={() => <CreateVillainContainer loadVillainsFromServer={this.loadVillainsFromServer}/>} />
    { 
      this.state.villains
      ? <Route path='/villains' render={() => <Villains showUniqueVillain={this.showUniqueVillain} deleteVillain={this.deleteVillain} villains={this.state.villains} />} />
      : 'Error!'
    }
+
+  <Route path='/edit-hero/:heroId' render={() => <EditHeroContainer />} />
+
   </div>
 </Router>
  </div>

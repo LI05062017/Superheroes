@@ -25,7 +25,6 @@ const VillainCard = ({villain, deleteVillain, showUniqueVillain}) => {
     <img style={VillainStyle.p}src={villain.img}/>
     <p style={VillainStyle.p}>Nemesis: {villain.nemesis}</p>
     <p style={VillainStyle.p}>Universe: {villain.universe}</p>
-
     <button onClick={() => deleteVillain(villain)}>Delete Villain</button>
     <button onClick={() => showUniqueVillain(villain)}> Show Unique Villain </button>
   </div>
