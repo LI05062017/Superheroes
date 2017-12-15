@@ -32,10 +32,7 @@ class HeroContainer extends Component {
          ? <HeroInfo hero={this.state.hero} />
          : 'Error'
        }
-
-
       </div>
-
    )
  }
 }

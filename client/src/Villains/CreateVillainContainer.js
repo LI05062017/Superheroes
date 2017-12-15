@@ -49,6 +49,10 @@ class CreateVillainContainer extends Component {
         <h3 className='createVillain'> Create Villain </h3>
         <div className='villainForm'>
         <VillainForm 
+            name={this.state.name}
+            img={this.state.img}
+            nemesis={this.state.nemesis}
+            universe={this.state.universe}
             onNameChange={this.onNameChange}
             onImageChange={this.onImageChange}
             onNemesisChange={this.onNemesisChange}

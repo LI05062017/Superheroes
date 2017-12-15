@@ -1,4 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import {
+  Link
+} from 'react-router-dom'
 
 const VillainStyle={
   container: {
@@ -27,8 +31,16 @@ const VillainCard = ({villain, deleteVillain, showUniqueVillain}) => {
     <p style={VillainStyle.p}>Universe: {villain.universe}</p>
     <button onClick={() => deleteVillain(villain)}>Delete Villain</button>
     <button onClick={() => showUniqueVillain(villain)}> Show Unique Villain </button>
+    <Link to={`/villain/${villain._id}`}> View Villain!</Link>
+    <Link to={`/edit-villain/${villain._id}`}> Edit Villain </Link>
   </div>
   )
+}
+
+VillainCard.propTypes = {
+  villain: PropTypes.object.isRequired,
+  deleteVillain: PropTypes.func.isRequired,
+  showUniqueVillain: PropTypes.func.isRequired
 }
 
 export default VillainCard

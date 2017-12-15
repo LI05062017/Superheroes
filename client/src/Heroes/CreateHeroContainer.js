@@ -22,7 +22,7 @@ class CreateHeroContainer extends Component {
 
   onNameChange = (e) => this.setState({ name: e.target.value})
 
-  onSuperPowerChange = (e) => this.setState({ superPower: e.target.value })
+  onSuperPowerChange = (e) => this.setState({ superPower: e.target.value})
 
   onImageChange = (e) => this.setState({ img: e.target.value })
   
@@ -51,6 +51,11 @@ class CreateHeroContainer extends Component {
         <h3 className='createHero'> Create Hero </h3>
         <div className='heroForm'>
         <HeroForm 
+            name={this.state.name}
+            img={this.state.img}
+            superPower={this.state.superPower}
+            universe={this.state.universe}
+            nemesis={this.state.nemesis}
             onNameChange={this.onNameChange}
             onSuperPowerChange={this.onSuperPowerChange}
             onImageChange={this.onImageChange}
