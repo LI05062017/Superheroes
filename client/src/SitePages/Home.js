@@ -24,7 +24,7 @@ const Home = () =>
     <h4> SuperHeroes</h4>
     <h4> ⚡️ and ⚡️</h4>
     <h4> Villains</h4>
-    <h4> </h4>
+    <img src=''/>
     </div>
 
 

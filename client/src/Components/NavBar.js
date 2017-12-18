@@ -5,31 +5,33 @@ import {
 
 const styleNav = {
   container: {
-    padding: '15px',
-    margin: '15px',
-    border: '10px double red',
-    fontSize: '18px',
-    fontFamily: 'Rajdhani',
-    borderRadius: '5px',
-    backgroundColor: 'white',
-
-
+    color:'black',
+    border: '1px solid white',
+    backgroundColor:'white',
+    border: '10px double black',
+    borderRadius: '5px'
+   
   },
   title: {
     textAlign:'center',
-    fontSize: '40px',
+    fontSize: '45px',
     padding: '17px',
     margin: '10px',
-    fontFamily: 'Orbitron',
-    letterSpacing: '2px',
+    fontFamily: 'Bowlby One SC',
+    letterSpacing: '3px',
     textDecoration: 'underline'
   },
   nav: {
-    color: 'black',
+    fontSize: '19px',
+    textDecoration:'none',
     display: 'flex',
     alignItems: 'center',
     alignItems: 'center',
     justifyContent: 'space-around',
+    borderRadius:'5px',
+    padding: '5px',
+    fontFamily: 'Rajdhani'
+    
 
   }, 
 }
@@ -37,7 +39,8 @@ const styleNav = {
 const NavBar = () =>
 
   <nav style={styleNav.container}>
-  <h1 style={styleNav.title}>⚡️SuperHeroes + Villains⚡️ </h1>
+  <h1 style={styleNav.title}>SuperHeroes vs. Villains </h1>
+
   <div style={styleNav.nav}>
     <Link to ='/'>Home</Link>
     <Link to ='/heroes'>Heroes</Link>

@@ -6,22 +6,33 @@ import PropTypes from 'prop-types'
 const style={
   container: {
     color: 'white',
-    border: '4px outset green',
+    border: '4px outset white',
     borderRadius: '5px',
-    margin: '20px'
+    margin: '10px',
+    display: 'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    
   },
   h3: {
-    textDecoration: 'underline green',
+    fontFamily: 'Orbitron',
+    textDecoration: 'underline yellow',
     letterSpacing: '2px',
-    fontSize: '25px',
-  },
-  p: { 
-    fontFamily: 'Rajdhani',
-    fontSize: '17px'
+    fontSize: '27px',
   },
   link: {
     color: 'white',
-    border: '1px solid white'
+    fontFamily: 'Orbitron',
+    padding: '5px',
+    letterSpacing: '2px'
+  },
+  button: {
+    color: 'black',
+    fontFamily: 'Orbitron',
+    padding: '6px',
+    margin: '5px',
+    width: '250px'
   }
   }
 
@@ -29,14 +40,10 @@ const HeroCard = ({hero, deleteHero, showUniqueHero}) => {
   return (
   <div style={style.container}>
     <h3 style={style.h3}>{hero.name}</h3>
-    <p style={style.p}>SuperPower: {hero.superPower}</p>
-    <img style={style.p}src={hero.img}/>
-    <p style={style.p}>Universe: {hero.universe}</p>
-    <p style={style.p}>Nemesis: {hero.nemesis}</p>
-    <button onClick={() => deleteHero(hero)}>Delete Hero</button>
-    <button onClick={() => showUniqueHero(hero)}> Show Unique Hero </button>
-    <Link to={`/hero/${hero._id}`}>View Hero!</Link>
-    <Link to={`/edit-hero/${hero._id}`}> Edit Hero </Link>
+    <Link to={`/hero/${hero._id}`} style={style.link}>View Hero!</Link>
+    <Link to={`/edit-hero/${hero._id}`}style={style.link}> Edit Hero </Link>
+    <button onClick={() => showUniqueHero(hero)}style={style.button}> Show Unique Hero </button>
+    <button onClick={() => deleteHero(hero)}style={style.button}>Delete Hero</button>
   </div>
   )
 }

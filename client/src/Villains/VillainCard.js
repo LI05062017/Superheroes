@@ -4,35 +4,46 @@ import {
   Link
 } from 'react-router-dom'
 
-const VillainStyle={
+const style={
   container: {
     color: 'white',
-    border: '4px outset orange',
+    border: '4px outset white',
     borderRadius: '5px',
-    margin: '20px'
+    margin: '10px',
+    display: 'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
   },
   h3: {
+    fontFamily: 'Orbitron',
     textDecoration: 'underline orange',
     letterSpacing: '2px',
-    fontSize: '25px',
+    fontSize: '27px',
   },
-  p: { 
-    fontFamily: 'Rajdhani',
-    fontSize: '17px'
+  link: { 
+    color: 'white',
+    fontFamily: 'Orbitron',
+    padding: '5px',
+    letterSpacing: '2px'
   },
+  button: {
+    color: 'black',
+    fontFamily: 'Orbitron',
+    padding: '6px',
+    margin: '5px',
+    width: '250px'
+  }
   }
 
 const VillainCard = ({villain, deleteVillain, showUniqueVillain}) => {
   return (
-  <div style={VillainStyle.container}>
-    <h3 style={VillainStyle.h3}>{villain.name}</h3>
-    <img style={VillainStyle.p}src={villain.img}/>
-    <p style={VillainStyle.p}>Nemesis: {villain.nemesis}</p>
-    <p style={VillainStyle.p}>Universe: {villain.universe}</p>
-    <button onClick={() => deleteVillain(villain)}>Delete Villain</button>
-    <button onClick={() => showUniqueVillain(villain)}> Show Unique Villain </button>
-    <Link to={`/villain/${villain._id}`}> View Villain!</Link>
-    <Link to={`/edit-villain/${villain._id}`}> Edit Villain </Link>
+  <div style={style.container}>
+    <h3 style={style.h3}>{villain.name}</h3>
+    <Link to={`/villain/${villain._id}`} style={style.link} > View Villain!</Link>
+    <Link to={`/edit-villain/${villain._id}`} style={style.link} > Edit Villain </Link>
+    <button onClick={() => deleteVillain(villain)}style={style.button}>Delete Villain</button>
+    <button onClick={() => showUniqueVillain(villain)}style={style.button}> Show Unique Villain </button>
   </div>
   )
 }

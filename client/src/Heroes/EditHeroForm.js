@@ -2,8 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const styles = {
-  container: {
-    color: 'white'
+   container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+   },
+input: {
+    fontSize: '20px',
+    color: 'white',
+    fontFamily: 'Kanit',
+    padding: '2px',
+  },
+  box: {
+    fontSize: '10px',
+    color: 'white',
+    fontFamily: 'Kanit',
+    padding: '2px',
+  },
+  button: {
+    padding: '9px',
+    display: 'flex',
+    alignItems:'center',
+    justifyContent: 'center'
   }
 }
 
@@ -13,31 +34,33 @@ const EditHeroForm = ({
   }) => 
 <form> 
 
-  <div>
-  <label style={styles.container}> Name</label>
-  <input value={name} onChange={onNameChange}/>
+  <div style={styles.container}>
+  <label style={styles.input}> Name</label>
+  <input style={styles.box} value={name} onChange={onNameChange}/>
   </div>
 
-  <div>
-    <label style={styles.container}> Image </label>
-    <input value={img} onChange={onImageChange} />
+  <div style={styles.container}>
+    <label style={styles.input}> Image </label>
+    <input style={styles.box} value={img} onChange={onImageChange} />
   </div>
 
-  <div>
-    <label style={styles.container}> Superpower </label>
-    <input value={superPower} onChange={onSuperPowerChange} />
+  <div style={styles.container}>
+    <label style={styles.input}> Superpower </label>
+    <input style={styles.box} value={superPower} onChange={onSuperPowerChange} />
   </div>
 
-  <div>
-    <label style={styles.container}> Nemesis </label>
-    <input value={nemesis} onChange={onNemesisChange} />
+  <div style={styles.container}>
+    <label style={styles.input}> Nemesis </label>
+    <input style={styles.box} value={nemesis} onChange={onNemesisChange} />
   </div>
 
-  <div>
-    <label style={styles.container}> Universe </label>
-    <input value={universe} onChange={onUniverseChange}/>
+  <div style={styles.container}>
+    <label style={styles.input}> Universe </label>
+    <input style={styles.box} value={universe} onChange={onUniverseChange}/>
   </div>
-<button onClick={submitHeroToServer}> Submit </button>
+  <div style={styles.button}>
+<button  onClick={submitHeroToServer}> Submit </button>
+  </div>
 </form>
 
  EditHeroForm.propTypes = {

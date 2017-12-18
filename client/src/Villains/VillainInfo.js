@@ -1,29 +1,38 @@
 import React from 'react'
 
-const styles = {
- container: {
-   color: 'white',
-   padding: '10px',
-   margin: '10px',
-   display: 'flex',
-   flexDirection: 'column',
-   alignItems: 'center',
- },
- p: {
-   fontFamily:'Orbitron',
-   display:'flex',
-   alignItems: 'center',
 
- }
+const styles = {
+  container: {
+    color: 'white',
+    padding: '10px',
+    margin: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    border: '3px solid orange',
+    borderRadius: '5px',
+  },
+  p: {
+    fontFamily:'Orbitron',
+    display:'flex',
+    alignItems: 'center',
+
+  },
+  title: {
+  fontSize: '25px',
+  fontFamily:'Orbitron',
+  display:'flex',
+  alignItems: 'center',
+  }
 }
 
 const VillainInfo = ({villain}) => {
   return (
     <div style={styles.container} >
-      <p style={styles.p}> {villain.name} </p>
+      <p style={styles.title}> ⚡️ {villain.name} ⚡️ </p>
       <img src={villain.img} />
-      <p style={styles.p}> {villain.nemesis} </p>
-      <p style={styles.p}> {villain.universe} </p>
+      <p style={styles.p}> Nemesis: {villain.nemesis} </p>
+      <p style={styles.p}> Universe: {villain.universe} </p>
     </div>
   )
 }

@@ -1,12 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const styles = {
+  container: {
+    color: 'white'
+  }
+}
+
 const VillainForm = ({onNameChange, onImageChange, onNemesisChange, onUniverseChange, handleSubmit}) => {
   return (
   <div>
     <form>
       <div>
-        <label> Name </label>
+        <label style={styles.container} > Name </label>
         <input type='text' onChange={onNameChange} />
       </div>
 

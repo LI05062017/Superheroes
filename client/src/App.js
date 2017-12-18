@@ -6,6 +6,7 @@ import {
 import Heroes from './Heroes/Heroes'
 import Villains from './Villains/Villains'
 import Home from './SitePages/Home'
+import Header from './SitePages/Header'
 import NavBar from './Components/NavBar'
 import './Components/style.css'
 import HeroContainer from './Heroes/HeroContainer'
@@ -14,6 +15,7 @@ import CreateHeroContainer from './Heroes/CreateHeroContainer'
 import CreateVillainContainer from './Villains/CreateVillainContainer'
 import EditHeroContainer from './Heroes/EditHeroContainer'
 import EditVillainContainer from './Villains/EditVillainContainer'
+
 import $ from 'jquery'
 
 
@@ -125,9 +127,11 @@ showUniqueVillain = (villain) => {
 render() {
   return (
     <div className='body'>
+  
 <Router>
   <div>
     <NavBar />
+    <Header />
     <Route exact path='/' component={Home} />
     <Route path='/create-hero' render={() => <CreateHeroContainer loadHeroesFromServer={this.loadHeroesFromServer}/>} />
     {
