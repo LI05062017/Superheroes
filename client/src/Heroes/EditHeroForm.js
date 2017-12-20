@@ -16,7 +16,7 @@ input: {
   },
   box: {
     fontSize: '10px',
-    color: 'white',
+    color: 'black',
     fontFamily: 'Kanit',
     padding: '2px',
   },
@@ -30,7 +30,8 @@ input: {
 
 const EditHeroForm = ({ 
   name, img, superPower, universe, nemesis,
-  onImageChange, onNameChange, onSuperPowerChange, onNemesisChange, onUniverseChange, submitHeroToServer
+  onImageChange, onNameChange, onSuperPowerChange, 
+  onNemesisChange, onUniverseChange, submitHeroToServer, villains
   }) => 
 <form> 
 
@@ -50,14 +51,23 @@ const EditHeroForm = ({
   </div>
 
   <div style={styles.container}>
-    <label style={styles.input}> Nemesis </label>
-    <input style={styles.box} value={nemesis} onChange={onNemesisChange} />
-  </div>
-
-  <div style={styles.container}>
     <label style={styles.input}> Universe </label>
     <input style={styles.box} value={universe} onChange={onUniverseChange}/>
   </div>
+
+  <div style={styles.container}>
+    <label style={styles.input}> Nemesis </label>
+      <select onChange={onNemesisChange}>
+      <option> This is an option </option>
+      {
+        villains.map(villain => {
+          console.log(villain._id)
+          return <option value={villain._id}>{villain.name}</option>
+        })
+      }
+      </select>
+  </div>
+
   <div style={styles.button}>
 <button  onClick={submitHeroToServer}> Submit </button>
   </div>
@@ -74,7 +84,8 @@ const EditHeroForm = ({
    onUniverseChange: PropTypes.func.isRequired,
    onSuperPowerChange: PropTypes.func.isRequired,
    onNemesisChange: PropTypes.func.isRequired,
-   submitHeroToServer: PropTypes.func.isRequired
+   submitHeroToServer: PropTypes.func.isRequired,
+   villains: PropTypes.array.isRequired
  }
 
 export default EditHeroForm

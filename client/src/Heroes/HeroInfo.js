@@ -32,7 +32,8 @@ const HeroInfo = ({hero}) => {
       <p style={styles.p}> Superpower: {hero.superPower} </p>
       <img style={styles.p}src={hero.img}/>
       <p style={styles.p}> Universe: {hero.universe} </p>
-       <p style={styles.p}> Nemesis: {hero.nemesis} </p>
+      <p style={styles.p}> Nemesis: {hero.nemesis ? hero.nemesis.name : 'no nemesis'} </p>
+      <img style={styles.p} src={hero.nemesis.img} />
       </div>
   )
 }

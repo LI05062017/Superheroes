@@ -133,7 +133,12 @@ render() {
     <NavBar />
     <Header />
     <Route exact path='/' component={Home} />
-    <Route path='/create-hero' render={() => <CreateHeroContainer loadHeroesFromServer={this.loadHeroesFromServer}/>} />
+    {
+      this.state.villains
+      ?<Route path='/create-hero' render={() => <CreateHeroContainer villains={this.state.villains} loadHeroesFromServer={this.loadHeroesFromServer}/>} />
+      : 'No villains yet'
+    }
+    
     {
        this.state.heroes
       ? <Route path='/heroes' render={() => <Heroes showUniqueHero={this.showUniqueHero} deleteHero={this.deleteHero} heroes={this.state.heroes} />} />
@@ -141,10 +146,18 @@ render() {
     }
     
     <Route path='/hero/:heroId' render={() => <HeroContainer />} />
-    <Route path='/edit-hero/:heroId' render={() => <EditHeroContainer />} />
+    {
+    this.state.villains
+    ?<Route path='/edit-hero/:heroId' render={() => <EditHeroContainer villains={this.state.villains}/>} />
+    : 'no villains'
+    }
     
+    {
+      this.state.heroes
+      ? <Route path='/create-villain' render={() => <CreateVillainContainer heroes={this.state.heroes} loadVillainsFromServer={this.loadVillainsFromServer}/>} />
+      : 'No heroes yet'
+    }
     
-    <Route path='/create-villain' render={() => <CreateVillainContainer loadVillainsFromServer={this.loadVillainsFromServer}/>} />
    { 
      this.state.villains
      ? <Route path='/villains' render={() => <Villains showUniqueVillain={this.showUniqueVillain} deleteVillain={this.deleteVillain} villains={this.state.villains} />} />
@@ -152,8 +165,11 @@ render() {
    }
 
     <Route path='/villain/:villainId' render={() => <VillainContainer />} />
-    <Route path='/edit-villain/:villainId' render={() => <EditVillainContainer />} />
-
+   {
+    this.state.villains
+     ? <Route path='/edit-villain/:villainId' render={() => <EditVillainContainer  heroes={this.state.heroes}/>} />
+    : 'No Heroes'
+   }
   </div>
 </Router>
  </div>

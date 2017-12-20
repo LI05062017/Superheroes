@@ -7,7 +7,7 @@ const styles = {
   }
 }
 
-const VillainForm = ({onNameChange, onImageChange, onNemesisChange, onUniverseChange, handleSubmit}) => {
+const CreateVillainForm = ({onNameChange, onImageChange, onNemesisChange, onUniverseChange, handleSubmit, heroes}) => {
   return (
   <div>
     <form>
@@ -21,26 +21,36 @@ const VillainForm = ({onNameChange, onImageChange, onNemesisChange, onUniverseCh
         <input type='text' onChange={onImageChange} />
       </div>
 
-      <div>
-        <label> Nemesis </label>
-        <input type='text' onChange={onNemesisChange} />
-      </div>
-
       <div> 
         <label> Universe </label>
         <input type='text' onChange={onUniverseChange} />
       </div>
-      <button onClick={handleSubmit}> Submit Villain </button>
+      
+      <div>
+        <label> Nemesis </label>
+          <select onChange={onNemesisChange}>
+          <option>Pick Your Superhero</option>
+            {
+              heroes.map(hero => {
+              console.log(hero._id)
+              return <option value={hero._id}>{hero.name}</option>
+            })
+            }
+          </select>
+          </div>
+          <button onClick={handleSubmit}> Submit Villain </button>
     </form>
-  </div>
-  )
-}
+   </div>
 
-VillainForm.propTypes ={
+    )}
+    
+
+CreateVillainForm.propTypes ={
   onNameChange: PropTypes.func.isRequired,
   onImageChange: PropTypes.func.isRequired,
   onUniverseChange: PropTypes.func.isRequired,
   onNameChange: PropTypes.func.isRequired,
+
 }
 
-export default VillainForm
+export default CreateVillainForm

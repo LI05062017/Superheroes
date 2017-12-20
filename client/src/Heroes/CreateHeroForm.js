@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisChange, onUniverseChange, handleSubmit}) => {
+const CreateHeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisChange, onUniverseChange, handleSubmit, villains}) => {
  return (
    <div>
       <form>
@@ -27,7 +27,15 @@ const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisCha
 
           <div>
             <label> Nemesis </label>
-            <input type='text' onChange={onNemesisChange}/>
+            <select onChange={onNemesisChange}>
+            <option> Pick Your Villain </option>
+             {
+               villains.map(villain => {
+              console.log(villain._id)
+              return <option value={villain._id}>{villain.name}</option>
+             })
+            }
+            </select>
           </div>
           <button onClick={handleSubmit}> Submit Hero </button>
           
@@ -37,13 +45,14 @@ const HeroForm = ({onNameChange, onSuperPowerChange, onImageChange, onNemesisCha
  )
 }
 
-HeroForm.propTypes ={
+CreateHeroForm.propTypes ={
   onNameChange: PropTypes.func.isRequired,
   onSuperPowerChange: PropTypes.func.isRequired,
   onImageChange: PropTypes.func.isRequired,
   onUniverseChange: PropTypes.func.isRequired,
   onNameChange: PropTypes.func.isRequired,
+  villains: PropTypes.array.isRequired
 }
 
 
-export default HeroForm
+export default CreateHeroForm

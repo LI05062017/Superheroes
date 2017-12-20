@@ -23,7 +23,7 @@ h1: {
 const Heroes = ({heroes, deleteHero, showUniqueHero}) => {
   return(
     <div style={HeroStyles.container}>
-      <h1 style={HeroStyles.h1}> ⭐️ ⭐️  Heroes ⭐️ ⭐️ </h1>
+      <h1 style={HeroStyles.h1}> ⭐️ ⭐️ Superheroes ⭐️ ⭐️ </h1>
       {
         heroes.map((hero) => {
           return (

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import VillainForm from './VillainForm'
+import CreateVillainForm from './CreateVillainForm'
 import PropTypes from 'prop-types'
 import $ from 'jquery'
 import {
@@ -44,11 +44,12 @@ class CreateVillainContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return(
       <div className='VillainBody'> 
         <h3 className='createVillain'> Create Villain </h3>
         <div className='villainForm'>
-        <VillainForm 
+        <CreateVillainForm 
             name={this.state.name}
             img={this.state.img}
             nemesis={this.state.nemesis}
@@ -58,6 +59,7 @@ class CreateVillainContainer extends Component {
             onNemesisChange={this.onNemesisChange}
             onUniverseChange={this.onUniverseChange}
             handleSubmit={this.handleSubmit}
+            heroes={this.props.heroes}
         />
         </div>
       </div>

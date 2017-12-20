@@ -33,6 +33,11 @@ const style={
     padding: '6px',
     margin: '5px',
     width: '250px'
+  },
+  p: {
+    fontFamily: 'Orbitron',
+    letterSpacing: '2px',
+    fontSize: '17px',
   }
   }
 
@@ -44,6 +49,7 @@ const HeroCard = ({hero, deleteHero, showUniqueHero}) => {
     <Link to={`/edit-hero/${hero._id}`}style={style.link}> Edit Hero </Link>
     <button onClick={() => showUniqueHero(hero)}style={style.button}> Show Unique Hero </button>
     <button onClick={() => deleteHero(hero)}style={style.button}>Delete Hero</button>
+    <p style={style.p}> Nemesis: {hero.nemesis ? hero.nemesis.name : 'no nemesis'} </p>
   </div>
   )
 }

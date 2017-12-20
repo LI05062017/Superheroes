@@ -31,8 +31,9 @@ const VillainInfo = ({villain}) => {
     <div style={styles.container} >
       <p style={styles.title}> ⚡️ {villain.name} ⚡️ </p>
       <img src={villain.img} />
-      <p style={styles.p}> Nemesis: {villain.nemesis} </p>
       <p style={styles.p}> Universe: {villain.universe} </p>
+      <p style={styles.p}> Nemesis: {villain.nemesis ? villain.nemesis.name : 'no nemesis'} </p>
+      <img style={styles.p} src={villain.nemesis.img} />
     </div>
   )
 }

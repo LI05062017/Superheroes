@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const Villain = new Schema({
     name: {type: String, required: true},
     img: {type: String, reqiured: true},
-    nemesis: String,
+    nemesis: { type: Schema.Types.ObjectId, ref: 'SuperHero'},
     universe: String
 })
 

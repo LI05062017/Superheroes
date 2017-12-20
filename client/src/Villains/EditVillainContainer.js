@@ -65,7 +65,7 @@ render () {
    <div>
      {
        !this.state.loading
-       ? <EditVillainForm
+       ?<EditVillainForm
        name={name}
        img={img}
        nemesis={nemesis}
@@ -74,6 +74,7 @@ render () {
        onImageChange={this.onImageChange}
        onNemesisChange={this.onNemesisChange}
        onUniverseChange={this.onUniverseChange}
+       heroes={this.props.heroes}
        />
        : <h1> Loading... </h1>
       }

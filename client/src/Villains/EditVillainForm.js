@@ -16,7 +16,7 @@ input: {
  },
  box: {
    fontSize: '10px',
-   color: 'white',
+   color: 'black',
    fontFamily: 'Kanit',
    padding: '2px',
  },
@@ -29,32 +29,44 @@ input: {
 }
 
 const EditVillainForm = ({
-  name, img, nemesis, universe, onNameChange, onImageChange, onNemesisChange, onUniverseChange, submitVillainToServer
+  name, img, nemesis, universe, onNameChange, 
+  onImageChange, onNemesisChange, onUniverseChange, 
+  submitVillainToServer, heroes
 }) => 
 <form>
 
   <div style={styles.container}>
     <label style={styles.input}> Name </label>
     <input style={styles.box} value={name} onChange={onNameChange} />
-    </div>
+  </div>
 
   <div style={styles.container}>
-  <label style={styles.input}> Image </label>
-  <input style={styles.box} value={img} onChange={onImageChange} />
-    </div>
-
-  <div style={styles.container}>
-  <label style={styles.input}> Nemesis </label>
-  <input style={styles.box} value={nemesis} onChange={onNemesisChange} />
-   </div>
+    <label style={styles.input}> Image </label>
+    <input style={styles.box} value={img} onChange={onImageChange} />
+  </div>
   
   <div style={styles.container}>
-  <label style={styles.input}> Universe </label>
-  <input style={styles.box} value={universe} onChange={onUniverseChange} />
-    </div>
-    <div style={styles.button}>
+    <label style={styles.input}> Universe </label>
+    <input style={styles.box} value={universe} onChange={onUniverseChange} />
+  </div>
+
+  <div style={styles.container}>
+    <label style={styles.input}> Nemesis </label>
+    <select onChange={onNemesisChange}>
+    <option> This is an option </option>
+    {
+      heroes.map(hero => {
+        console.log(hero._id)
+        return <option value={hero._id}>{hero.name}</option>
+      })
+    }
+    </select>
+  </div>
+
+  <div style={styles.button}>
     <button onClick={submitVillainToServer}> Submit </button>
   </div>
+
 </form>
 
 EditVillainForm.propTypes = {
@@ -66,6 +78,7 @@ EditVillainForm.propTypes = {
   onImageChange: PropTypes.func.isRequired,
   onNemesisChange: PropTypes.func.isRequired,
   onUniverseChange: PropTypes.func.isRequired,
+  heroes: PropTypes.array.isRequired
 }
 
 export default EditVillainForm

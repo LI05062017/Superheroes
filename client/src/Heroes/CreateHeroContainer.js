@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import HeroForm from './HeroForm'
+import CreateHeroForm from './CreateHeroForm'
 import PropTypes from 'prop-types'
 import $ from 'jquery'
 import {
@@ -46,11 +46,13 @@ class CreateHeroContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className='HeroesBody'>
         <h3 className='createHero'> Create Hero </h3>
         <div className='heroForm'>
-        <HeroForm 
+        <CreateHeroForm 
+            villains={this.props.villains}
             name={this.state.name}
             img={this.state.img}
             superPower={this.state.superPower}
