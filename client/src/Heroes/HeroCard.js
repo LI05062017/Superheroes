@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
+import CardHeader from '../Components/CardHeader'
 
 
 const style={
@@ -13,13 +14,7 @@ const style={
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center',
-    
-  },
-  h3: {
-    fontFamily: 'Orbitron',
-    textDecoration: 'underline yellow',
-    letterSpacing: '2px',
-    fontSize: '27px',
+
   },
   link: {
     color: 'white',
@@ -44,7 +39,7 @@ const style={
 const HeroCard = ({hero, deleteHero, showUniqueHero}) => {
   return (
   <div style={style.container}>
-    <h3 style={style.h3}>{hero.name}</h3>
+    <CardHeader name={hero.name} img={hero.img}/>
     <Link to={`/hero/${hero._id}`} style={style.link}>View Hero!</Link>
     <Link to={`/edit-hero/${hero._id}`}style={style.link}> Edit Hero </Link>
     <button onClick={() => showUniqueHero(hero)}style={style.button}> Show Unique Hero </button>

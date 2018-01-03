@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {
   Link
 } from 'react-router-dom'
+import CardHeader from '../Components/CardHeader'
 
 const style={
   container: {
@@ -44,7 +45,7 @@ const style={
 const VillainCard = ({villain, deleteVillain, showUniqueVillain}) => {
   return (
   <div style={style.container}>
-    <h3 style={style.h3}>{villain.name}</h3>
+   <CardHeader name={villain.name} img={villain.img} />
     <Link to={`/villain/${villain._id}`} style={style.link} > View Villain!</Link>
     <Link to={`/edit-villain/${villain._id}`} style={style.link} > Edit Villain </Link>
     <button onClick={() => deleteVillain(villain)}style={style.button}>Delete Villain</button>

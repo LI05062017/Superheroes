@@ -5,7 +5,9 @@ import $ from 'jquery'
 
 class HeroContainer extends Component {
   state = {
-    hero: undefined
+    hero: undefined,
+    comments: undefined,
+    text: undefined
   }
 
   componentDidMount () {
@@ -18,18 +20,38 @@ class HeroContainer extends Component {
       url:`/api/heroes/${id}`,   
       method: 'GET'
     }).done((response) => {
-      console.log(response)
-      this.setState({hero: response.hero})
+      this.setState({hero: response.hero, comments: response.hero.comments})
+
+    })
+  }
+  submitComment = (e) => {
+    e.preventDefault()
+    const newComment = {text: this.state.text}
+    $.ajax({
+      url: `/api/heroes/${this.props.match.params.heroId}/comments`,
+      method: 'POST',
+      data: newComment
+    }).done((response) => {
+       this.loadHero(this.props.match.params.heroId)
+       this.setState({text: ''})
     })
   }
 
+  handleOnTextChange = (e) => this.setState({ text: e.target.value })
+  
  render() {
    return (
      <div>
        Hello from Hero HeroContainer
        {
          this.state.hero
-         ? <HeroInfo hero={this.state.hero} />
+         ? <HeroInfo 
+           hero={this.state.hero} 
+           comments={this.state.comments} 
+           submitComment={this.submitComment}
+           handleOnTextChange={this.handleOnTextChange}
+           text={this.state.text}
+           />
          : 'Error'
        }
       </div>

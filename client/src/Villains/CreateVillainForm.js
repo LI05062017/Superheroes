@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from '../Components/Button'
 
 const styles = {
   container: {
@@ -38,7 +39,7 @@ const CreateVillainForm = ({onNameChange, onImageChange, onNemesisChange, onUniv
             }
           </select>
           </div>
-          <button onClick={handleSubmit}> Submit Villain </button>
+          <Button handleClick={handleSubmit}> Submit Villain </Button>
     </form>
    </div>
 
